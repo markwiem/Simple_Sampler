@@ -24,15 +24,16 @@ pad_channel = [48, 49, 50, 51,
                40, 41, 42, 43,
                36, 37, 38, 39]
 
+#Number of pads the sampler has
 number_of_pads = 16
 
 live_loop :midi_piano do
   use_real_time
-  samp, start = sync "/midi/microkontrol_port_b/2/1/control_change"
+  samp, trigger = sync "/midi/microkontrol_port_b/2/1/control_change"
   for i in range(0, number_of_pads+1);
-    outro = start_location[i] + play_length[i]
-    if samp == pad_channel[i] and (start == 0 or start == 127);
-      sample juicy_sound, start: start_location[i], finish: outro, attack: 0.1, release: 0.1, rate: 1
+    if samp == pad_channel[i] and (trigger == 0 or trigger == 127);
+      sample juicy_sound, start: start_location[i], finish: (start_location[i] + play_length[i]),
+        attack: 0.1, release: 0.1, rate: 1
     end
     
   end
