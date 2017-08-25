@@ -35,6 +35,5 @@ live_loop :midi_piano do
       sample juicy_sound, start: start_location[i], finish: (start_location[i] + play_length[i]),
         attack: 0.1, release: 0.1, rate: 1
     end
-    
   end
 end
