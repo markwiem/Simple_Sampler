@@ -1,7 +1,7 @@
 # Simple Sampler v0.1
 # Mark Wiem 2017/08/24
 ######################################
-#12 Pad Sampler built using SonicPi 3.0
+#16 Pad Sampler built using SonicPi 3.0
 
 #load your local sample of choice
 juicy_sound = '/Users/markwiem/Documents/CODE/Sonic_Pi/Samples/TestSamples/BeNice.wav'
@@ -24,7 +24,7 @@ pad_channel = [48, 49, 50, 51,
                40, 41, 42, 43,
                36, 37, 38, 39]
 
-number_of_pads = 12
+number_of_pads = 16
 
 live_loop :midi_piano do
   use_real_time
